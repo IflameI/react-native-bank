@@ -8,6 +8,12 @@ import {
 import { getFirestore } from '@firebase/firestore';
 
 const firebaseConfig = {
+  apiKey: process.env.FIREBASE_APIKEY,
+  authDomain: process.env.FIREBASE_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECTID,
+  storageBucket: process.env.FIREBASE_STORAGE,
+  messagingSenderId: process.env.FIREBASE_MESSAGING,
+  appId: process.env.FIREBASE_APPID,
 };
 
 initializeApp(firebaseConfig);
