@@ -4,7 +4,7 @@ import { View, ScrollView } from 'react-native';
 import tw from 'tailwind-rn';
 
 interface ILayout {
-  isScrollView: boolean;
+  isScrollView?: boolean;
 }
 
 export const styleCenter = tw('h-full w-full bg-white pt-16');

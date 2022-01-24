@@ -20,7 +20,7 @@ export const AuthContext = createContext<IContext>({} as IContext);
 export const AuthProvider: React.FC = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoadingInitial, setIsLoadingInitial] = useState<boolean>(true);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const registerHandler = async (email: string, password: string) => {
     setIsLoading(true);
@@ -32,7 +32,7 @@ export const AuthProvider: React.FC = ({ children }) => {
         displayName: 'No name',
       });
     } catch (error: any) {
-      Alert.alert('Error register:', error);
+      Alert.alert('Error register:', error.message);
     } finally {
       setIsLoading(false);
     }
@@ -43,7 +43,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     try {
       await login(email, password);
     } catch (error: any) {
-      Alert.alert('Error login:', error);
+      Alert.alert('Error login:', error.message);
     } finally {
       setIsLoading(false);
     }
@@ -53,7 +53,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     try {
       await logout();
     } catch (error: any) {
-      Alert.alert('Error logout:', error);
+      Alert.alert('Error logout:', error.message);
     } finally {
       setIsLoading(false);
     }
@@ -78,6 +78,5 @@ export const AuthProvider: React.FC = ({ children }) => {
     }),
     [user, isLoading],
   );
-
   return <AuthContext.Provider value={value}>{!isLoadingInitial && children}</AuthContext.Provider>;
 };

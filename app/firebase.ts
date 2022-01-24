@@ -8,12 +8,12 @@ import {
 import { getFirestore } from '@firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_APIKEY,
-  authDomain: process.env.FIREBASE_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECTID,
-  storageBucket: process.env.FIREBASE_STORAGE,
-  messagingSenderId: process.env.FIREBASE_MESSAGING,
-  appId: process.env.FIREBASE_APPID,
+  apiKey: 'AIzaSyBcFeL8X3qzVFIoJJCZEKsyog9oRW1WNN8',
+  authDomain: 'react-native-bank-5d293.firebaseapp.com',
+  projectId: 'react-native-bank-5d293',
+  storageBucket: 'react-native-bank-5d293.appspot.com',
+  messagingSenderId: '1078888601623',
+  appId: '1:1078888601623:web:309d6234119a3029756452',
 };
 
 initializeApp(firebaseConfig);
